@@ -1,27 +1,77 @@
 public class Cliente {
 
-    int id;
-    String nome;
-    String cpf;
-    String telefone;
-    String endereco;
+    private int id;
+    private String nome;
+    private String cpf;
+    private String telefone;
+    private String endereco;
 
-public Cliente (int id, String nome, String cpf, String telefone, String endereco) {
+    public Cliente(int id, String nome, String cpf, String telefone, String endereco) {
 
-    this.id = id;
-    this.nome = nome;
-    this.cpf = cpf;
-    this.telefone = telefone;
-    this.endereco = endereco;
-}
+        setId(id);
+        setNome(nome);
+        setCpf(cpf);
+        setTelefone(telefone);
+        setEndereco(endereco);
+    }
 
-public void exibirInformacoes() {
+    public int getId() {
+        return id;
+    }
 
-    System.out.println("ID: " + this.id);
-    System.out.println("Nome: " + this.nome);
-    System.out.println("CPF: " + this.cpf);
-    System.out.println("Telefone: " + this.telefone);
-    System.out.println("Endereço: " + this.endereco);
-}
+    public void setId(int id) {
+        if (id > 0) {
+            this.id = id;
+        }
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        if (nome != null && !nome.trim().isEmpty()) {
+            this.nome = nome;
+        }
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        if (cpf != null && !cpf.trim().isEmpty()) {
+            this.cpf = cpf;
+        }
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        if (telefone != null && !telefone.trim().isEmpty()) {
+            this.telefone = telefone;
+        }
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        if (endereco != null && !endereco.trim().isEmpty()) {
+            this.endereco = endereco;
+        }
+    }
+
+    public void exibirInformacoes() {
+
+        System.out.println("ID: " + getId());
+        System.out.println("Nome: " + getNome());
+        System.out.println("CPF: " + getCpf());
+        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Endereço: " + getEndereco());
+    }
 
 } // Final da Classe

@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
@@ -130,7 +129,7 @@ public class PetShop {
 
         System.out.println("=== CLIENTES DISPONÍVEIS ===");
         for (Cliente c : clientes) {
-            System.out.println("ID: " + c.id + " | Nome: " + c.nome);
+            System.out.println("ID: " + c.getId() + " | Nome: " + c.getNome());
         }
         System.out.println("---------------------------");
 
@@ -187,7 +186,8 @@ public class PetShop {
         System.out.println("Serviço cadastrado com sucesso! ID: " + idServico);
     }
 
-    public static void agendarServico(Scanner scanner, Random random, ArrayList<Pet> pets, ArrayList<Catalogo> catalogo, ArrayList<Agendamento> agendamentos) {
+    public static void agendarServico(Scanner scanner, Random random, ArrayList<Pet> pets, ArrayList<Catalogo> catalogo,
+            ArrayList<Agendamento> agendamentos) {
         System.out.println("=== AGENDAR SERVIÇO ===");
 
         if (pets.isEmpty() || catalogo.isEmpty()) {
@@ -197,7 +197,7 @@ public class PetShop {
 
         System.out.println("=== LISTA DE PETS DISPONÍVEIS ===");
         for (Pet p : pets) {
-            System.out.println("ID: " + p.id + " | Nome: " + p.nome);
+            System.out.println("ID: " + p.getId() + " | Nome: " + p.getNome());
         }
         System.out.println("---------------------------------");
 
@@ -206,7 +206,8 @@ public class PetShop {
 
         System.out.println("\n--- CATÁLOGO DE SERVIÇOS ---");
         for (Catalogo c : catalogo) {
-            System.out.println("ID: " + c.idServico + " | Serviço: " + c.nomeServico + " | Preço: R$ " + c.precoServico);
+            System.out.println("ID: " + c.getIdServico() + " | Serviço: " + c.getNomeServico() + " | Preço: R$ "
+                    + c.getPrecoServico());
         }
         System.out.println("----------------------------");
 
@@ -243,7 +244,7 @@ public class PetShop {
         System.out.print("Quantidade em Estoque: ");
         int quantidadeEstoque = scanner.nextInt();
 
-        scanner.nextLine(); // Clear buffer 
+        scanner.nextLine(); // Clear buffer
 
         int idProduto = random.nextInt(9000) + 1000;
 
@@ -302,7 +303,8 @@ public class PetShop {
         }
     }
 
-    public static void relatorioCompleto(ArrayList<Cliente> clientes, ArrayList<Pet> pets, ArrayList<Produto> produtos, ArrayList<Agendamento> agendamentos) {
+    public static void relatorioCompleto(ArrayList<Cliente> clientes, ArrayList<Pet> pets, ArrayList<Produto> produtos,
+            ArrayList<Agendamento> agendamentos) {
         System.out.println("\n=== RELATÓRIO COMPLETO DO SISTEMA ===");
         listarClientes(clientes);
         listarPets(pets);
